@@ -1,0 +1,24 @@
+# Mano Chess
+
+A web-based chess game with realistic coins, a large, responsive board, animated background, and both local and online multiplayer support.
+
+## Features
+
+- Realistic black and white chess pieces
+- Large, mobile-friendly chess board
+- Animated, colorful background
+- Local two-player mode
+- (Planned) Online multiplayer
+- Game title: Mano Chess
+
+## Setup
+
+1. Clone/download the repo.
+2. Open `index.html` in your browser.
+
+## To Do
+
+- Add real chess rules for all pieces
+- Implement online multiplayer (WebSocket, Firebase, etc.)
+- Add piece images for realism (or use SVG/Unicode)
+- Polish UI and animations

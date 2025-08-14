@@ -1,0 +1,100 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: transparent;
+  overflow: hidden;
+}
+#bg-animation {
+  position: fixed;
+  top:0; left:0; right:0; bottom:0;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(135deg, #3e1c92 0%, #f83600 100%);
+  animation: gradientBG 8s ease-in-out infinite alternate;
+}
+@keyframes gradientBG {
+  from { filter: hue-rotate(0deg);}
+  to   { filter: hue-rotate(360deg);}
+}
+.container {
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
+  max-width: 95vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+h1 {
+  color: #fff;
+  text-shadow: 2px 2px 8px #222;
+  margin-top: 1rem;
+}
+.mode-select {
+  margin: 1rem 0;
+  display: flex;
+  gap: 1rem;
+}
+.mode-select button {
+  padding: 0.8rem 1.4rem;
+  background: #3e1c92;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 2px 12px #0003;
+  transition: background 0.2s;
+}
+.mode-select button:hover {
+  background: #f83600;
+}
+#chess-board {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(32px, 8vw));
+  grid-template-rows: repeat(8, minmax(32px, 8vw));
+  gap: 2px;
+  background: #333;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px #0006;
+  margin-bottom: 1.5rem;
+  max-width: 90vw;
+  max-height: 90vw;
+  aspect-ratio: 1/1;
+}
+.chess-cell {
+  width: 100%;
+  aspect-ratio: 1/1;
+  background: #fff;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5vw;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.chess-cell.dark {
+  background: #3e1c92;
+}
+.chess-cell.selected, .chess-cell.move {
+  outline: 3px solid #f83600;
+  z-index: 2;
+}
+.chess-piece {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+}
+#game-info {
+  color: #fff;
+  font-size: 1.2rem;
+  text-shadow: 1px 1px 5px #222;
+}
+@media (max-width: 600px) {
+  #chess-board { grid-template-columns: repeat(8, minmax(32px, 12vw)); }
+  .chess-cell { font-size: 4vw; }
+}
